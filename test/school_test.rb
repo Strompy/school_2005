@@ -53,12 +53,21 @@ class SchoolTest < Minitest::Test
     assert_equal '12:00', school2.end_time
   end
 
+# did a different full_time test at first
+  # def test_if_school_is_full_time
+  #
+  #   school = School.new('9:00', 7)
+  #
+  #   assert_operator 4, :<=, school.hours_in_school_day
+  # end
+
   def test_if_school_is_full_time
 
     school = School.new('9:00', 7)
 
-    assert_operator 4, :<=, school.hours_in_school_day
+    assert_equal true, school.is_full_time?
   end
+
 
   def test_if_standard_student_names_capitalize
     school = School.new('9:00', 7)

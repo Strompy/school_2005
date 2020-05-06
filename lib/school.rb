@@ -14,6 +14,14 @@ attr_reader :start_time,
     @student_names << student_name
   end
 
+  def is_full_time?
+    if @hours_in_school_day >= 4
+      full_time = true
+    else
+      full_time = false
+    end
+  end
+
   def end_time
     time_int = @start_time.to_i
     time_int += @hours_in_school_day
