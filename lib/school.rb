@@ -34,10 +34,16 @@ attr_reader :start_time,
   end
 
   def convert_end_time_to_clock_time
-    clock_end = @start_time.to_i
-    clock_end += @hours_in_school_day
-    clock_end -= 12
-    clock_end.to_s + ":00"
+    if hours_in_school_day >= 4
+      clock_end = @start_time.to_i
+      clock_end += @hours_in_school_day
+      clock_end -= 12
+      clock_end.to_s + ":00"
+    else
+      clock_end = @start_time.to_i
+      clock_end += @hours_in_school_day
+      clock_end.to_s + ":00"
+    end
   end
 
 end
